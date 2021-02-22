@@ -1,0 +1,270 @@
+html, 
+body {
+    margin: 0;
+}
+
+
+body {	
+	
+
+	background-color: var(--bg, white);
+	transition: background 400ms;
+}
+body, input {
+	/*font-family: 'PT Mono', monospace !important;*/
+	font-family: 'Monaco', monospace !important;
+	/*font-family: 'Andalé Mono', monospace !important;*/
+}
+
+
+.navigation {
+    background-color: var(--navbg, #f4f5f6);
+	border-bottom: .1rem solid #d1d1d1;
+    border-color: var(--navborder, #d1d1d1);
+
+    margin-bottom: 40px;
+    display: block;
+    
+    max-width: 100%;
+    
+    width: 100%;
+    color: var(--navcolor, #666);
+    transition: background 400ms, border 400ms, color 400ms;
+}
+.navigation .row .column:first-child {
+	text-align: left;
+}
+.navigation .row .column:last-child {
+	text-align: right;
+	font-size: 14px;
+}
+.navigation h1 {
+	margin: 0;
+	padding: 1em 0 0.5em 0;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: auto;
+	color: var(--navcolor, #666);
+}
+.navigation .subtitle {
+	padding-bottom: 1.5em;
+	font-size: 12px;
+}
+
+.navigation .container {
+    padding-bottom: 0;
+    padding-top:0
+}
+.navigation .row {
+	align-items: center;
+	flex-wrap: nowrap;
+	flex-direction: row !important;
+}
+
+
+
+.column {
+	text-align: center;
+
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+input[type='text'], input[type='number'] {
+	font-size: 30px !important;
+	background-color: var(--inputbg, transparent) !important;
+	color: var(--inputcolor, #111);
+	height: auto !important;
+	transition: background 600ms, color 300ms;
+	padding: 0.1em 0.2em 0em 0.2em !important;
+}
+input[type='text']:focus, input[type='number']:focus {
+ 	border-color: #00D0E6 !important;
+}
+
+
+
+span.input {
+	color: #AAA;
+}
+
+span.input label {
+	display: block;
+	color: #aaa;
+	margin-bottom: 5px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: normal;;
+}
+span.input > div {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+span.input > div > * {
+	flex: 1 1 auto;
+}
+span.input > div > *:first-child {
+	 flex-grow: 0;
+}
+span.input > div > input {	
+	margin: 3px;
+	letter-spacing: 2px;
+	
+}
+
+
+#binRow {
+	color: #AAA;
+}
+
+#binInput {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	margin: 3px;
+}
+#binInput input {
+	position: relative;
+	margin: 0;
+	padding-left: 7px;
+	
+	min-width: 200px;
+	box-sizing: border-box;;
+	width: 100%;
+	z-index: 1;
+}
+#binInput input, #binInput .fakeText {
+	font-size: 30px;
+	letter-spacing: 14px;
+}
+
+#binInput .fakeText {
+	position: absolute;
+	left: -200px;
+	visibility: hidden;
+}
+#binInput .values {
+	position: absolute;
+	z-index: 1;
+	pointer-events: none;
+	top:0;
+	left: 0;
+	height: 100%;	
+	display: flex;
+	transition: opacity 0.3s;
+}
+#binInput .values span {
+
+	border-right: 1px solid #ccc;
+	height: 100%;
+	width:20px;
+
+	flex: 1 1 0px;
+	text-align: center;
+	color: black;
+}
+#binInput .values span:last-child {
+	border-right: none;
+}
+#binInput .indices {
+	user-select: none; 
+	-webkit-user-select: none;
+	cursor: pointer;
+	position: absolute;
+	display: flex;
+	z-index: 1;
+	opacity: 0.5;
+	bottom: -25px;
+	left: 0;
+	transition: opacity 0.3s;
+}
+#binInput .indices span {
+
+	display: inline-block;
+	box-sizing: border-box;
+	flex: 1 1 0px;
+	text-align: center;
+	font-size: 13px;
+	color: #bbb;
+}
+
+
+
+span.bitsButtonGroup {
+	display: inline-flex;
+	font-size: 12px;
+	margin: 30px;
+	 align-self: center;
+}
+span.bitsButtonGroup span {
+	cursor: pointer;
+	display: block;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding: 10px;
+	margin: 0;
+	color: #aaa;
+	
+	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+}
+span.bitsButtonGroup span:hover, span.bitsButtonGroup span.selected {
+	background-color: var(--buttonbg, #aaa);
+	border-color: #aaa;
+	color: white;
+}
+span.bitsButtonGroup span:first-child {
+	border-left: 1px solid #ccc;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+span.bitsButtonGroup span:last-child {
+	border-right: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+
+#darkModeToggle {
+	display: inline-block !important;
+	margin: 20px;
+  --size: 2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: #e6e6ff;
+  transition: all 500ms;
+  z-index: 1;
+}
+#darkModeToggle:checked {
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
+  transform: scale(0.75);
+  color: #ffdd00;
+  box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size), var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size), 0 var(--offset-orthogonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size), var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size), var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+}
+
+@media (prefers-color-scheme: dark) {
+	/* prevents flashing from bright to dark that happens if you only rely on JS */
+	:root {
+	    --bg: #202021;
+      	--navbg: #2A2A2B;
+      	--navborder: #101010;
+      	--navcolor: #B6B7B7;
+      	--inputbg: rgba(255,255,255,0.02);
+      	--inputcolor: #fff;
+      	--buttonbg: #3A3A3B;
+	}
+}

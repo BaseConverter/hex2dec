@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="title" content="Convert Hex to Decimal">
+	<meta name="description" content="Hex to Decimal converter">
+	<meta name="keywords" content="Binary, Decimal, Hexadecimal">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="#f4f5f6">
+   	<meta name="apple-mobile-web-app-title" content="Milligram - A minimalist CSS framework">
+   	<meta name="application-name" content="Milligram - A minimalist CSS framework">
+	<title>Convert Hex to Decimal</title>	
+	
+	<link type="text/css" rel="stylesheet" href="main.css" />
+	<link rel="stylesheet" href="milligram.min.css">
+</head>
+<body class="dark">
+	<nav class="navigation">
+		<section class="container">
+			<div class="row">
+
+				<div class="column column-75">
+					<div class="navigation-title">
+						<a class="" href="/" title="Convert Hex to Decimal"><h1 class="title">Convert Hex to Decimal</h1></a>
+					</div>
+					<div class="subtitle">
+						Convert between binary, hexadecimal, decimal and octal.
+					</div>				
+				</div>
+				<div class="column column-25">
+					<input id="darkModeToggle" type="checkbox" checked>
+				</div>
+			</div>
+		</section>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="column ">
+				<span class="input">
+					<label>Decimal</label>
+					<div><span>&nbsp;&nbsp;</span><input type="text" inputmode="numeric" id="dec" /></div>
+				</span>
+			</div>
+			<div class="column">
+				<span class="input">
+					<label>Hex</label>
+					<div><span>0x</span><input type="text" inputmode="verbatim" id="hex" autofocus /></div>
+				</span>
+			</div>
+			<div class="column">
+				<span class="input">
+					<label>Octal</label>
+					<div><span>0o</span><input type="text" inputmode="numeric" id="oct" /></div>			
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<span class="input">
+					<label>BINARY</label>
+					<div>
+						<span>0b</span>
+						<span id="binInput">
+							<input type="text" inputmode="numeric" id="bin" />
+							<span class="fakeText"></span>
+							<div class="values"></div>
+							<div class="indices"></div>
+						</span>
+					</div>
+				</span>
+			</div>
+		</div>
+		<div class="row" id="bitsRow">
+			<div class="column">
+				<span class="bitsButtonGroup">
+					<span data-bits="0" class="selected">Auto</span>
+					<span data-bits="8">1 Byte</span>
+					<span data-bits="16">2 Bytes</span>
+					<span data-bits="32">4 Bytes</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
